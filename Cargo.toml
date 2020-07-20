@@ -3,6 +3,13 @@ name = "mdbook-fix-cjk-spacing"
 version = "0.1.0"
 authors = ["Jinzhou Zhang <lotabout@gmail.com>"]
 edition = "2018"
+description = "mdbook preprocess that fixes CJK line breaks"
+documentation = "https://github.com/lotabout/mdbook-fix-cjk-spacing"
+homepage = "https://github.com/lotabout/mdbook-fix-cjk-spacing"
+repository = "https://github.com/lotabout/mdbook-fix-cjk-spacing"
+readme  = "README.md"
+keywords = ["mdbook", "CJK"]
+license = "MIT"
 
 [[bin]]
 name = "mdbook-fix-cjk-spacing"
