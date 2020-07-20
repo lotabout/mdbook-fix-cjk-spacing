@@ -23,6 +23,20 @@ This preprocessor will fix that.
     ```
 3. Done
 
+# How does it work?
+
+This preprocessor will work on AST of the markdown file:
+
+1. It will use [pulldown-cmark](https://github.com/raphlinus/pulldown-cmark) to parse the markdown file.
+2. When encounter a `SoftBreak` token, it will search before and after for a `Text` token.
+3. The `SoftBreak` is omitted when the previous text ends with CJK and next text starts with CJK character.
+
+The binary has a "raw" mode for showing the processed output:
+
+```sh
+cat markdown.md | md-fix-cjk-spacing raw
+```
+
 # The problem
 
 In markdown, if we write several lines continuously, it will be parsed as a
