@@ -11,6 +11,7 @@ use mdbook_fix_cjk_spacing::{join_cjk_spacing, FixCJKSpacing};
 
 pub fn make_app() -> App<'static, 'static> {
     App::new("mdbook-fix-cjk-spacing")
+        .version(env!("CARGO_PKG_VERSION"))
         .about("A mdbook preprocessor that will remove line breaks between CJK lines")
         .subcommand(
             SubCommand::with_name("supports")
