@@ -11,7 +11,7 @@ fi
 TAG=${GITHUB_REF#*/tags/}
 
 host=$(rustc -Vv | grep ^host: | sed -e "s/host: //g")
-cargo rustc --bin mdbook-fix-cjk-spacing --release -- -C lto
+cargo build --release
 cd target/release
 case $1 in
   ubuntu* | macos*)
