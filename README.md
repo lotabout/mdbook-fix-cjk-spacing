@@ -15,7 +15,8 @@ This preprocessor will fix that.
 
 # Usage
 
-1. Download the binary from the release page and put it in your `PATH`.
+1. Download the binary from the [release page](https://github.com/lotabout/mdbook-fix-cjk-spacing/releases) and put it in your `PATH`.
+    - Alternatively, build from source: `cargo install mdbook-fix-cjk-spacing`
 2. Add the following config to your `book.toml`
     ```
     [preprocessor.fix-cjk-spacing]
