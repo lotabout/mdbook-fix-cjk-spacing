@@ -1,6 +1,6 @@
 [package]
 name = "mdbook-fix-cjk-spacing"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Jinzhou Zhang <lotabout@gmail.com>"]
 edition = "2018"
 description = "mdbook preprocess that fixes CJK line breaks"
