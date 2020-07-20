@@ -7,7 +7,7 @@ use mdbook::errors::Error;
 use mdbook::preprocess::{CmdPreprocessor, Preprocessor};
 use serde_json;
 
-use mdbook_fix_cjk_spacing::{FixCJKSpacing, join_cjk_spacing};
+use mdbook_fix_cjk_spacing::{join_cjk_spacing, FixCJKSpacing};
 
 pub fn make_app() -> App<'static, 'static> {
     App::new("mdbook-fix-cjk-spacing")
@@ -17,7 +17,10 @@ pub fn make_app() -> App<'static, 'static> {
                 .arg(Arg::with_name("renderer").required(true))
                 .about("Check whether a renderer is supported by this preprocessor"),
         )
-        .subcommand(SubCommand::with_name("raw").about("Process raw markdown files, e.g. `cat mark.md | mdbook-fix-cjk-spacing`"))
+        .subcommand(
+            SubCommand::with_name("raw")
+                .about("Process raw markdown files, e.g. `cat mark.md | mdbook-fix-cjk-spacing`"),
+        )
 }
 
 fn main() {
