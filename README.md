@@ -1,3 +1,6 @@
+[![Github Actions](https://github.com/lotabout/mdbook-fix-cjk-spacing/workflows/CI/badge.svg)](https://github.com/lotabout/mdbook-fix-cjk-spacing/actions?query=workflow%3ACI)
+[![Crates.io](https://img.shields.io/crates/v/mdbook-fix-cjk-spacing.svg)](https://crates.io/crates/mdbook-fix-cjk-spacing)
+
 [mdbook](https://github.com/rust-lang/mdBook) will render extra space of
 continuous lines with CJK characters.
 
