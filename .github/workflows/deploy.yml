@@ -20,6 +20,6 @@ jobs:
       shell: bash
     - name: Build and deploy artifacts
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.MDBOOK_FIX_CJK_SPACING_TOKEN }}
       run: ci/make-release.sh ${{ matrix.os }}
       shell: bash
