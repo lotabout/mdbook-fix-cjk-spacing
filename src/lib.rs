@@ -3,7 +3,7 @@ use anyhow::Result;
 use mdbook::book::Book;
 use mdbook::preprocess::{Preprocessor, PreprocessorContext};
 use mdbook::BookItem;
-use pulldown_cmark::{Event, Parser};
+use pulldown_cmark::{Event, Options, Parser};
 use pulldown_cmark_to_cmark::cmark;
 
 /// A no-op preprocessor.
@@ -133,9 +133,15 @@ fn find_prev_text<'a>(events: &'a [Event], start: usize) -> &'a str {
 
 pub fn join_cjk_spacing(markdown: &str) -> Result<String> {
     // remove SoftBreak if the previous text ends with CJK and next text starts with CJK
+    let mut opts = Options::empty();
+    opts.insert(Options::ENABLE_TABLES);
+    opts.insert(Options::ENABLE_FOOTNOTES);
+    opts.insert(Options::ENABLE_STRIKETHROUGH);
+    opts.insert(Options::ENABLE_TASKLISTS);
 
     let mut buf = String::with_capacity(markdown.len());
-    let mut events: Vec<Event> = Parser::new(markdown).collect();
+
+    let mut events: Vec<Event> = Parser::new_ext(markdown, opts).collect();
     let mut keep_event = Vec::with_capacity(events.len());
 
     for index in 0..events.len() {
